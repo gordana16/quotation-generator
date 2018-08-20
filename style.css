@@ -1,0 +1,48 @@
+body{
+  background-color: #98dbdb;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #FFF;
+}
+
+h1{
+  text-align: center;
+}
+
+.generator{
+  position: absolute;
+  top: 25%;
+  left:44%;
+}
+.btn-gen{   
+  background: transparent; 
+  border: 2px solid #008CBA;
+  border-radius: 6px;  
+  color: #FFF;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  
+}
+
+.btn-gen:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.quote{
+  position: relative;
+  left: -35%;
+  top: 70px;
+  font-weight: 700;
+  font-size: 32px; 
+  margin-top: 30px;
+
+}
