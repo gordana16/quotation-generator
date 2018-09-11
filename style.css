@@ -1,0 +1,59 @@
+body{
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.95),
+  rgba(40, 180, 131, 0.95)),
+   url(words.png);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+h1{
+  text-align: center;
+  font-size: 36px;
+}
+
+.main{
+  display: inline-block;
+  position: absolute;
+  left: 37%;
+  top: 20%;
+  font-size: 22px;
+  line-height: 16px;
+}
+
+.quotes-generation{
+  font-family: 'Damion', cursive;
+  font-size: 32px;
+  line-height: 28px;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  left: -100px;
+}
+
+.btn{
+  padding: 8px 16px;
+  border: 0;
+  background: #ecd031;    
+  color: #fff;
+  font-size: 18px;
+  margin: 0 40px;
+}
+
+#quotes{
+  padding: 3px;
+}
+
+input[type=radio]{
+  width: 20px;
+  height: 20px;
+}
+
+.bye{
+  font-size: 32px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 100px;
+}
+

@@ -14,7 +14,9 @@ Quotations.prototype.generateQuote = function () {
   return this.beginning[begIndex] + this.middle[midIndex] + this.end[endIndex] + this.punct[punctIndex];
 }
 
-var bQuotes, mQuotes, eQoutes, pQuotes, keepGenerate;
+
+
+var bQuotes, mQuotes, eQoutes, pQuotes, quotations;
 
 pQuotes = ['.', '!', '!!!'];
 
@@ -29,29 +31,34 @@ mQuotes = ['and if you fall in love with the journey ', 'people will forget what
 eQuotes = ['you will be in love forever', 'but people will never forget how you made them feel', 'security is the denial of life', 'and then acting on them'];
 
 var quotationsLife = new Quotations(1, bQuotes, mQuotes, eQuotes, pQuotes);
+quotations = [quotationsSuccess, quotationsLife];
 
-keepGenerate = -1;
+document.querySelector('.bye').style.display = 'none';
 
-do {
-  (function () {
-    var quantity, type;
+document.querySelector(".btn-gen").addEventListener('click', function () {
+  var quantity, type;
 
-    do {
-      quantity = parseInt(prompt('Enter the number of quotes between 1 and 5 to be generated:'));
-      console.log(quantity);
-    } while (quantity < 1 || quantity > 5);
+  document.querySelector('.quotes-generation').innerHTML = '';
+  document.querySelector('.range').innerHTML = '';
 
-    do {
-      type = parseInt(prompt('Enter  0  for  quotes about success or 1 for quotes about life:'));
-      console.log(type);
-    } while (type !== 0 && type !== 1);
+  quantity = parseInt(document.getElementById('quotes').value);
+  if (isNaN(quantity)) {
+    document.querySelector('.range').innerHTML = '<p> Choose the number between 1 and 5!</p>';
+  }
 
-    var quotes = (type === 0) ? quotationsSuccess : quotationsLife;
-    for (var i = 0; i < quantity; i++) {
-      console.log(quotes.generateQuote());
-    }
-    var answer = prompt('Do you want to generate more quotes ? (Y/N)');
-    keepGenerate = (answer.toUpperCase() === 'Y') ? 1 : 0;
-  }());
-} while (keepGenerate === 1);
+  type = parseInt(document.querySelector(".type").value);
 
+
+  for (var i = 0; i < quantity; i++) {
+    document.querySelector('.quotes-generation').innerHTML += '<p>' + quotations[type].generateQuote() + '</p>';
+  }
+});
+
+document.querySelector(".btn-quit").addEventListener('click', function () {
+  document.querySelector('.main').innerHTML = '';
+  document.querySelector('.bye').style.display = 'block';
+});
+
+/*document.getElementById("quotes").addEventListener('onchange', function () {
+  document.querySelector('.range').innerHTML = '';
+});*/

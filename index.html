@@ -5,12 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Random Quote Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+  <h1>Random Quote Generator</h1>
+  <section class="main">
+    <form action="">
+      <label for="quotes">Enter the number of quotes:</label>
+      <select name="quotes" id="quotes">
+        <option disabled selected value=""># of quotes</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <br>
+      <label for="">Choose the type of quotes:</label>
+      <input type="radio" name="type" class="type" value="0" checked> Success
+      <input type="radio" name="type" class="type" value="1"> Life
+    </form>
+    <div class="quotes-generation">
+      <!--add generated quotes-->
+    </div>
+    <br>
+    <br>
+    <button type="button" class="btn btn-gen">Generate Quotes</button>
+    <button type="button" class="btn btn-quit">Quit</button>
+    <div class='range'>
+      <!--add warning to choose number of quotes-->
+    </div>
+  </section>
+  <section class="bye">
+    <p>Thank you for using Random Quote Generator! </p>
+    <p>Have a nice day!</p>
+  </section>
   <script src="script.js"></script>
 </body>
 
