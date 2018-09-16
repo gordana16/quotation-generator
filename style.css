@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,900|Roboto');
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
 body{
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.95),
   rgba(40, 180, 131, 0.95)),
@@ -5,39 +11,66 @@ body{
   background-size: cover;
   background-position: center;
   color: #fff;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 h1{
-  text-align: center;
+  font-family: 'Raleway', sans-serif;
   font-size: 36px;
+  font-weight: 900;
+  text-align: center; 
+  text-transform: uppercase;
 }
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  color: #000;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.3)
+}
+
 
 .main{
   display: inline-block;
-  position: absolute;
-  left: 37%;
-  top: 20%;
-  font-size: 22px;
-  line-height: 16px;
+  font-size: 16px; 
+  width: 100%;
 }
 
-.quotes-generation{
-  font-family: 'Damion', cursive;
-  font-size: 32px;
-  line-height: 28px;
-  color: #fff;
+.quotes-container{
+  width: 100%;  
+  color: #444;
   display: inline-block;
-  position: relative;
-  left: -100px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  margin: 30px 0;
+  padding: 30px;
+}
+.valid-range {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  text-align: center;
 }
 
+.quotes-container p {
+  margin: 0 0 10px 0; 
+}
+.buttons {
+  text-align: center;
+}
 .btn{
   padding: 8px 16px;
   border: 0;
-  background: #ecd031;    
+  background: #7cd379; 
+  border-radius: 4px;   
   color: #fff;
   font-size: 18px;
-  margin: 0 40px;
+  margin: 0 10px;
 }
 
 #quotes{
@@ -49,11 +82,11 @@ input[type=radio]{
   height: 20px;
 }
 
-.bye{
-  font-size: 32px;
+.bye{ 
+  font-size: 36px; 
   text-align: center;
   display: inline-block;
   position: relative;
-  top: 100px;
+  top: 0;
 }
 

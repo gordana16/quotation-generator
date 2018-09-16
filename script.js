@@ -1,3 +1,4 @@
+//creating new Quotes objects of a certain type through constructor function
 function Quotations(type, beginning, middle, end, punct) {
   this.type = type;
   this.beginning = beginning;
@@ -6,6 +7,7 @@ function Quotations(type, beginning, middle, end, punct) {
   this.punct = punct;
 }
 
+//adding function which creates random quoute from quote segments
 Quotations.prototype.generateQuote = function () {
   var begIndex = Math.floor(Math.random() * this.beginning.length);
   var midIndex = Math.floor(Math.random() * this.middle.length);
@@ -14,51 +16,49 @@ Quotations.prototype.generateQuote = function () {
   return this.beginning[begIndex] + this.middle[midIndex] + this.end[endIndex] + this.punct[punctIndex];
 }
 
-
-
 var bQuotes, mQuotes, eQoutes, pQuotes, quotations;
 
 pQuotes = ['.', '!', '!!!'];
 
-bQuotes = ['No one can make you ', 'What seems to us as ', 'Success is walking from ', 'The starting point of ', 'All progress ', 'The only place where success comes ', 'Be content to act '];
-mQuotes = ['feel inferior ', 'bitter trials are ', 'failure to failure ', 'all achievement ', 'takes place ', 'before work is ', ' and leave '];
-eQuotes = ['without your consent ', 'often blessings in disguise', 'with no loss of enthusiasm', 'is desire', 'outside the comfort zone', 'in the dictionary', 'the talking to others'];
+bQuotes = ['Patience, persistence and perspiration ', 'Communication ', 'The secret of your success ', 'More than anything else, preparation ', 'Setting goals ', 'Before everything else, getting ready '];
+mQuotes = ['make an unbeatable combination ', 'is the key ', 'is determined ', 'is the key ', 'is the first step ', 'is the secret '];
+eQuotes = ['for success', 'to personal and career success', 'by your daily agenda', 'to success', 'in turning the invisible into the visible', 'of success'];
 
 var quotationsSuccess = new Quotations(0, bQuotes, mQuotes, eQuotes, pQuotes);
 
-bQuotes = ['Life is a journey ', 'I\'ve learned that people will forget what you said ', 'Security is when everything is settled ', 'There is no stress in the world '];
-mQuotes = ['and if you fall in love with the journey ', 'people will forget what you did ', 'when nothing can happen to you ', 'only people thinking stressful thoughts '];
-eQuotes = ['you will be in love forever', 'but people will never forget how you made them feel', 'security is the denial of life', 'and then acting on them'];
+bQuotes = ['The biggest adventure you can take ', 'The purpose of human life ', 'The purpose of art ', 'The sole meaning of life ', 'The whole point ', 'Life '];
+mQuotes = ['is to live ', 'is to serve and to show ', 'is washing ', 'is to serve ', 'is to live life and to use ', 'is something to do '];
+eQuotes = ['the life of your dreams', 'compassion and the will to help others', 'the dust of daily life off our souls', 'humanity', 'all the colors in the crayon box', ' when you can\'t get to sleep'];
 
 var quotationsLife = new Quotations(1, bQuotes, mQuotes, eQuotes, pQuotes);
 quotations = [quotationsSuccess, quotationsLife];
 
-document.querySelector('.bye').style.display = 'none';
-
 document.querySelector(".btn-gen").addEventListener('click', function () {
   var quantity, type;
+  var quotesContainer = document.querySelector('.quotes-container');
+  quotesContainer.style.display = "block";
+  quotesContainer.innerHTML = '';
 
-  document.querySelector('.quotes-generation').innerHTML = '';
-  document.querySelector('.range').innerHTML = '';
+  quotesContainer.classList.remove('valid-range');
 
   quantity = parseInt(document.getElementById('quotes').value);
+
   if (isNaN(quantity)) {
-    document.querySelector('.range').innerHTML = '<p> Choose the number between 1 and 5!</p>';
+    quotesContainer.classList.add('valid-range');
+    quotesContainer.innerHTML = '<p>Choose the number between 1 and 5!</p>';
   }
 
-  type = parseInt(document.querySelector(".type").value);
-
+  type = parseInt(document.querySelector('input[name="type"]:checked').value);
 
   for (var i = 0; i < quantity; i++) {
-    document.querySelector('.quotes-generation').innerHTML += '<p>' + quotations[type].generateQuote() + '</p>';
+    quotesContainer.innerHTML += '<p>' + quotations[type].generateQuote() + '</p>';
   }
 });
 
 document.querySelector(".btn-quit").addEventListener('click', function () {
   document.querySelector('.main').innerHTML = '';
-  document.querySelector('.bye').style.display = 'block';
+  document.querySelector('.bye').innerHTML =
+    '<p><b>Thank you for using Random Quote Generator!</p>' +
+    '<p>Have a nice day!</b></p>';
 });
 
-/*document.getElementById("quotes").addEventListener('onchange', function () {
-  document.querySelector('.range').innerHTML = '';
-});*/
